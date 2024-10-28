@@ -3,8 +3,7 @@ from typing import Any, Callable
 
 
 def log(filename: Any) -> Callable:
-    """Логирует вызов функции и ее результат в файл или на консоль.
-    """
+    """Логирует вызов функции и ее результат в файл или на консоль."""
 
     def decorator(func: Callable) -> Callable:
         @wraps(func)
@@ -20,7 +19,8 @@ def log(filename: Any) -> Callable:
                     print(log_message)
             else:
                 print(log_message)
-#            return result
+
+        #            return result
         return wrapper
 
     return decorator
