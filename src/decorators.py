@@ -2,9 +2,8 @@ from functools import wraps
 from typing import Any, Callable
 
 
-def log(filename: Any) -> Callable:
-    """Логирует вызов функции и ее результат в файл или на консоль.
-    """
+def log(filename: Any = None) -> Callable:
+    """Логирует вызов функции и ее результат в файл или на консоль."""
 
     def decorator(func: Callable) -> Callable:
         @wraps(func)
@@ -20,7 +19,23 @@ def log(filename: Any) -> Callable:
                     print(log_message)
             else:
                 print(log_message)
-#            return result
+
+        #            return result
         return wrapper
 
     return decorator
+
+if __name__ == '__main__':
+
+    @log(filename="mylog.txt")
+    def my_function(x, y):
+        return x + y
+
+
+    @log()
+    def my_function_(x, y):
+        return x + y
+
+    print(my_function(1,2))
+
+    print(my_function_(3,2))
