@@ -36,7 +36,6 @@ if __name__ == '__main__':
     def my_function_(x, y):
         return x + y
 
-
     print(my_function(1,2))
 
     print(my_function_(3,2))
