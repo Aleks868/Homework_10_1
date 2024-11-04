@@ -16,7 +16,6 @@ def log(filename: Any = None) -> Callable:
             if filename:
                 with open(filename, "a", encoding="utf-8") as file:
                     file.write(log_message + "\n")
-                    print(log_message)
             else:
                 print(log_message)
 
