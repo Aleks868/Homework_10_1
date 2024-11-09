@@ -1,0 +1,2 @@
+my_function error: division by zero. Inputs:(4, 0), {}
+my_function called with args: (4, 2), kwargs:{}. Result: 2.0
