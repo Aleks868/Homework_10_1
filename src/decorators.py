@@ -17,27 +17,27 @@ def log(filename: Any = None) -> Callable:
             finally:
                 if filename:
                     with open(filename, "a", encoding="utf-8") as file:
-                         file.write(log_message + "\n")
+                        file.write(log_message + "\n")
                 else:
                     print(log_message)
 
             return result
+
         return wrapper
+
     return decorator
 
 
-if __name__ == '__main__':
-
-    @log(filename = 'mylog.txt')
-    def my_function(x, y):
-        return x / y
-
-
-    @log(filename = '')
-    def my_function_(x, y):
-        return x + y
-
-
-    print(my_function(4, 2))
-
-    # print(my_function_(3, 2))
+# if __name__ == "__main__":
+#
+#     @log(filename="mylog.txt")
+#     def my_function(x, y):
+#         return x / y
+#
+#     @log(filename="")
+#     def my_function_(x, y):
+#         return x + y
+#
+#     print(my_function(4, 2))
+#
+#     # print(my_function_(3, 2))
