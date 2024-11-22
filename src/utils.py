@@ -6,7 +6,7 @@ logging.basicConfig(
     format="%(asctime)s: %(filename)s: %(levelname)s: %(message)s",
     filename="../logs/utils.log",
     filemode="w",
-                    )
+)
 
 logger = logging.getLogger("utils")
 
